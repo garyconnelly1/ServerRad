@@ -32,6 +32,7 @@
 				<td><form:input path="metres"></form:input></td>
 				<td><form:errors path="metres"></form:errors></td>
 			</tr>
+			
 			<tr>
 				<td><input type="submit" value="Add" /></td>
 			</tr>
