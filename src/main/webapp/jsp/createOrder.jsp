@@ -15,13 +15,13 @@
 			<tr>
 				<td>Ship Name:</td>
 				<td>
-					<form:select path="ship" items="${shipList}"/>
+					<form:select path="ship" items="${shippingList}"/>
 				</td>
 			</tr>
 			<tr>
 			<td>Shipping Company:</td>
 				<td>
-					<form:select path="ShippingCompany" items="${companyList}"/>
+					<form:select path="ShippingCompany" items="${orderCompanyList}"/>
 				</td>
 			</tr>
 			<tr>
