@@ -17,5 +17,9 @@ public class ShippingService {
 	public ArrayList<Ship> listAll() {
 		return (ArrayList<Ship>) shipInterface.findAll();
 	}
+	
+	public Ship addShip(Ship ship) {
+		return shipInterface.save(ship);
+	}
 
 }
