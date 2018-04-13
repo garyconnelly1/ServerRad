@@ -11,6 +11,22 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.ships.model.ShippingCompany;
+import com.ships.services.ShippingCompanyService;
+
+@Controller
 public class ShipCompanyController {
+	
+	@Autowired
+	private ShippingCompanyService companyService;
+	
+	@RequestMapping(value = "/showShippingCompanies", method = RequestMethod.GET)
+	public String getShipCompanies(Model m) {
+
+		ArrayList<ShippingCompany> ships = companyService.listAll();
+		m.addAttribute("ships", ships);
+
+		return "showShips";
+	}//end getShips
 
 }
