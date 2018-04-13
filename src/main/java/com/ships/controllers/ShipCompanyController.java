@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.ships.model.Ship;
+
 import com.ships.model.ShippingCompany;
 import com.ships.services.ShippingCompanyService;
 
@@ -31,23 +31,23 @@ public class ShipCompanyController {
 	}//end getShips
 	
 	@RequestMapping(value = "/addShippingCompany", method = RequestMethod.GET)
-	public String getShip(@ModelAttribute("shipAdd") Ship s, HttpServletRequest h) {
+	public String getShip(@ModelAttribute("companyAdd") ShippingCompany c, HttpServletRequest h) {
 		return "addShippingCompany";
 	}//end getShip
 	
-	@RequestMapping(value = "/addShip", method = RequestMethod.POST)
-	public String addShip(@Valid @ModelAttribute("shipAdd") Ship s, BindingResult result, HttpServletRequest h, Model m) {
+	@RequestMapping(value = "/addShippingCompany", method = RequestMethod.POST)
+	public String addShip(@Valid @ModelAttribute("companyAdd") ShippingCompany c, BindingResult result, HttpServletRequest h, Model m) {
 		
 		if (result.hasErrors()) {
-			return "addShip";
+			return "addShippingCompany";
 		} else {
-			shipService.addShip(s);
+			companyService.addShipCompany(c);
 			
-			ArrayList<Ship> ships = shipService.listAll();
+			ArrayList<ShippingCompany> companies = companyService.listAll();
 	
-			m.addAttribute("ships", ships);
+			m.addAttribute("companies", companies);
 			//once the ship has been successfully added, redirect them to the show ships page to see the ship they added
-			return "showShips";
+			return "showShippingCompanies";
 		}
 	}//end addShip method
 

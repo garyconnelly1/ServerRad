@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
+import com.ships.model.Ship;
 import com.ships.model.ShippingCompany;
 import com.ships.repositories.ShipCompanyInterface;
 
@@ -19,5 +19,9 @@ public class ShippingCompanyService {
 		public ArrayList<ShippingCompany> listAll() {
 			return (ArrayList<ShippingCompany>) companyInterface.findAll();
 		}//end list all
+		
+		public ShippingCompany addShipCompany(ShippingCompany company) {
+			return companyInterface.save(company);
+		}
 
 }
