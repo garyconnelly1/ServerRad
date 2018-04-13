@@ -27,6 +27,27 @@ public class ShippingController {
 		m.addAttribute("ships", ships);
 
 		return "showShips";
-	}
+	}//end getShips
+	
+	@RequestMapping(value = "/addShip", method = RequestMethod.GET)
+	public String getShip(@ModelAttribute("shipAdd") Ship s, HttpServletRequest h) {
+		return "addShip";
+	}//end getShip
+	
+	@RequestMapping(value = "/addShip", method = RequestMethod.POST)
+	public String addShip(@Valid @ModelAttribute("shipAdd") Ship s, BindingResult result, HttpServletRequest h, Model m) {
+		
+		if (result.hasErrors()) {
+			return "addShip";
+		} else {
+			shipService.addShip(s);
+			
+			ArrayList<Ship> ships = shipService.listAll();
+	
+			m.addAttribute("ships", ships);
+			//once the ship has been successfully added, redirect them to the show ships page to see the ship they added
+			return "showShips";
+		}
+	}//end addShip method
 
 }
