@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.criteria.Order;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -28,6 +29,8 @@ public class ShippingCompany {
     @Size(min=1,max=250)
 	private String homePort;
 	@NotNull
+	//@Size(min=1)
+	@Min(value = 1)
 	private BigDecimal balance;
 	@OneToMany(mappedBy="shippingCompany")
 	private List<Ship>  
