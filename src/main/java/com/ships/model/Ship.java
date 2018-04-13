@@ -68,8 +68,9 @@ public class Ship {
 	}
 	@Override
 	public String toString() {
-		return "Ship [sid=" + sid + ", name=" + name + ", passengers=" + passengers + ", cost=" + cost + ", metres="
-				+ metres + ", shippingCompany=" + shippingCompany + "]";
+		//return "Ship [sid=" + sid + ", name=" + name + ", passengers=" + passengers + ", cost=" + cost + ", metres="
+			//	+ metres + ", shippingCompany=" + shippingCompany + "]";
+		return name + ", " + metres + "Mtrs, " +  cost + "\n";
 	}	
 	
 }
