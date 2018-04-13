@@ -22,5 +22,10 @@ public class OrderService {
 			public ArrayList<OrderInfo> listAll() {
 				return (ArrayList<OrderInfo>) orderInterface.findAll();
 			}//end list all
+			
+			//add an order
+			public OrderInfo addOrder(OrderInfo order) {
+				return orderInterface.save(order);
+			}//end add order
 
 }

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import com.ships.model.OrderInfo;
+import com.ships.model.Ship;
 import com.ships.services.OrderService;
 
 @Controller
@@ -27,5 +28,11 @@ public class OrderController {
 
 		return "showOrders";
 	}//end getShips
+	/*
+	@RequestMapping(value = "/addShip", method = RequestMethod.GET)
+	public String getShip(@ModelAttribute("shipAdd") Ship s, HttpServletRequest h) {
+		return "addShip";
+	}//end getShip
+	*/
 
 }
