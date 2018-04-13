@@ -22,11 +22,11 @@
 			</tr>
 			<c:forEach items="${ships}" var="ships">
 				<tr>
-					<td>${ships.name}<tv>
-					<td>${ships.passengers}<tv>
-					<td>${ships.cost}<tv>
-					<td>${ships.metres}<tv>
-					<td>${ships.shippingCompany.name}<tv>
+					<td>${ships.name}</td>
+					<td>${ships.passengers}</td>
+					<td>${ships.cost}</td>
+					<td>${ships.metres}</td>
+					<td>${ships.shippingCompany.name}</td>
 				</tr>
 			</c:forEach>
 		</table>

@@ -23,10 +23,10 @@ public class ShipCompanyController {
 	@RequestMapping(value = "/showShippingCompanies", method = RequestMethod.GET)
 	public String getShipCompanies(Model m) {
 
-		ArrayList<ShippingCompany> ships = companyService.listAll();
-		m.addAttribute("ships", ships);
+		ArrayList<ShippingCompany> companies = companyService.listAll();
+		m.addAttribute("companies", companies);
 
-		return "showShips";
+		return "showShippingCompanies";
 	}//end getShips
 
 }
