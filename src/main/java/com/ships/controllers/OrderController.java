@@ -87,6 +87,7 @@ ArrayList<Ship> ships = shipService.listAll();
 	
 			m.addAttribute("orders", orders);
 			//once the ship has been successfully added, redirect them to the show ships page to see the ship they added
+			//return "showOrders";
 			return "showOrders";
 		}
 	}//end addShip method
