@@ -79,8 +79,12 @@ ArrayList<Ship> ships = shipService.listAll();
 	public String addShip(@Valid @ModelAttribute("orderAdd") OrderInfo o, BindingResult result, HttpServletRequest h, Model m) {
 		
 		if (result.hasErrors()) {
+			//for some reason it is going into this if and nullafying the return
 			return "createOrder";
 		} else {
+			
+			
+			shipService.addShip(o.getShip());
 			orderService.addOrder(o);
 			
 			ArrayList<OrderInfo> orders = orderService.listAll();
